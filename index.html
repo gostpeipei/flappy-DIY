@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            canvas{
+                border: 1px solid #000;
+            }
+        </style>
+    </head>
+    <body>
+    <!-- <canvas id="cv"></canvas> -->
+    <div id='cv'></div>
+    <script src="js/utils.js"></script>
+    <script src="js/bird.js"></script>
+    <script src="js/sky.js"></script>
+    <script src="js/land.js"></script>
+    <script src="js/pipe.js"></script>
+    <script src="js/game.js"></script>
+    <script>
+    	// var cv = document.querySelector('#cv');
+     //    var ctx = cv.getContext('2d');
+     //    cv.width = 800;
+     //    cv.height = 600;
+        
+        var game = new Fly.Game('cv');
+        game.start();
+
+
+        // var game = new Game();
+        // var imgList =  ['birds','land','pipe1','pipe2','sky'];
+        // Fly.loadImg(imgList,function(list){
+
+        //     var roleList = [];
+        //     var gameContinue = true;
+        //     var bird = new Fly.Bird({
+        //         cv:cv,
+        //         ctx:ctx,
+        //         img:list.birds
+        //     });
+
+        //     for(var i = 0; i < 2; i++){
+        //         var sky = new Fly.Sky({
+        //             ctx:ctx,
+        //             img:list.sky,
+        //             x:list.sky.width * i,
+        //             speed:-0.2
+        //         })  
+        //         roleList.push(sky);
+        //     }
+
+        //     for(var i = 0; i < 6; i++){
+        //         var pipe = new Fly.Pipe({
+        //             ctx:ctx,
+        //             cv:cv,
+        //             imgUp:list.pipe2,
+        //             imgDown:list.pipe1,
+        //             x:list.pipe1.width * 3 * i + 300,
+        //             y:Math.random()*200 + 50 - list.pipe2.height,
+        //             pipeSpace:180,
+        //             speed:-0.2
+        //         })
+        //         roleList.push(pipe);
+        //     }
+
+        //     for(var i = 0; i < 4; i++){
+        //         var land = new Fly.Land({
+        //             ctx:ctx,
+        //             img:list.land,
+        //             x:list.land.width * i,
+        //             y:cv.height - list.land.height,
+        //             speed:-0.2
+        //         })  
+        //         roleList.push(land);
+        //     }
+
+
+
+
+        //     var lastTime = new Date();
+
+        //     var render = function(){
+        //         var curTime = new Date();
+        //         var delta = curTime - lastTime;
+        //         lastTime = curTime;
+
+            
+        //         ctx.clearRect(0,0,cv.width,cv.height);
+        //         ctx.save();
+        //         ctx.beginPath();
+        //         roleList.forEach(function(role){
+        //             role.draw( delta );
+        //         })
+
+        //         bird.draw(delta);
+        //         //小鸟位置坐标
+        //         // console.log(bird.x,bird.y)
+        //         //超出顶部结束游戏
+        //         if(bird.y <= 12){
+        //             gameContinue = false
+        //         }
+
+        //         //落地结束游戏
+        //         if(bird.y >= cv.height - land.imgH - 19){
+        //             gameContinue = false
+        //         }
+        //         //碰到桶 游戏结束
+        //         if(ctx.isPointInPath(bird.x+15,bird.y)){
+        //             gameContinue = false
+        //         }
+                
+
+        //         ctx.restore();
+
+
+                
+        //         if(gameContinue){
+        //             window.requestAnimationFrame(render);
+        //         }
+        //     }
+        //         window.requestAnimationFrame(render);
+
+
+        //     cv.addEventListener('click',function(){
+        //         bird.changeSpeed(-0.6);
+        //     })
+            
+        // })
+    </script>
+    </body>
+</html>
